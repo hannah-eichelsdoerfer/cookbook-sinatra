@@ -1,12 +1,16 @@
-<h1>Welcome to your Cookbook</h1>
-
-<p></p>
+<h1 class="headline" id="welcome">Welcome to your Cookbook</h1>
 
 <ul>
   <% @recipes.each_with_index do |recipe, index| %>
-    <li><%= recipe.name %>: <%= recipe.description %> <a href="/recipes/<%= index %>">Delete</a></li>
-    <p> Rating: <%= recipe.rating %></p>
+    <li>
+      <h4><%= recipe.name %></h4>
+      <p><%= recipe.description %></p>
+      <p hidden><%= recipe.prep_time %></p>
+      <p> Rating: <%= recipe.rating %></p>
+      <button class = "delete_button"><a href="/recipes/<%= index %>">Delete</a></button>
+    </li>
   <% end %>
 </ul>
 
-<a href="/new">Add a recipe</a>
+<button class="add"><a href="/new">Add a recipe</a></button>
+

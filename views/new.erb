@@ -1,0 +1,24 @@
+<a href="/" id=home>⌂</a>
+<h1 class="headline">Add a Recipe</h1>
+
+<form action="/recipes" method="post">
+  <div>
+    <label for="name">Name</label> <br>
+    <input type="text" name="name" autocomplete="off">
+  </div>
+  <div>
+    <label for="description">Description</label> <br>
+    <input type="text" name="description" autocomplete="off">
+  </div>
+  <div>
+    <label for="prep_time">Preperation Time</label> <br>
+    <input type="number" name="prep_time" placeholder="in min" autocomplete="off">
+  </div>
+  <div>
+    <label for="rating">Rating</label > <br>
+    <input type="number" min="1" max="5" name="rating" placeholder="1-5" autocomplete="off">
+  </div>
+  <button class="add" type="submit">Add to Cookbook</button> <br>
+  <!-- <input type="submit" value="Add to cookbook"> -->
+  <button class="add" type="reset">Reset</button>
+</form>
