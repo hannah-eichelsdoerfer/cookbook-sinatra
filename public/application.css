@@ -8,10 +8,8 @@ body {
 .container {
   border: 2px solid rgb(151, 146, 147);
   padding: 20px;
-  transition: transform 0.5s;
 }
 
 .container:hover {
   opacity: 60%;
-  transform: scale(1.1);
 }

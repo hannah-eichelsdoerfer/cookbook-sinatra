@@ -8,30 +8,15 @@ configure :development do
   BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
 
-# get '/' do # <- Router part
-#   erb :index
-#   # [...]   #
-#   # [...]   # <- Controller part
-#   # [...]   #
-# end
-
-get '/about' do
-  erb :about
-end
-
-get '/team/:username' do
-  # binding.pry <= code would stop here for HTTP request localhost:4567/team/someone
-  puts params[:username]
-  "The username is #{params[:username]}"
-end
-
-# Information:
-# params can be filled from 3 places:
-  # Routing parameters (like /team/:username)
-  # Query string parameters (if the URL is like /search?keyword=lewagon)
-  # Body from HTTP POST queries (coming from <form action="post" />)
+require_relative "cookbook"
+require_relative "recipe"
 
 get '/' do
-  @usernames = [ 'ssaunier', 'Papillard' ]
+  cookbook = Cookbook.new(File.join(__dir__, 'recipes.csv'))
+  @recipes = cookbook.all
   erb :index
+end
+
+get '/new' do
+  erb :new
 end

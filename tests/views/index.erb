@@ -1,0 +1,22 @@
+<p>
+  I'm in a <em>view</em>!
+</p>
+<%= Time.now %>
+
+<%
+=begin%>
+<ul>
+  <% [ 'Papillard', 'ssaunier' ].each do |username| %>
+    <li>
+      <%= username %>
+    </li>
+  <% end %>
+</ul>
+<%
+=end%>
+
+<% @usernames.each do |username| %>
+  <li>
+    <%= username %>
+  </li>
+<% end %>
