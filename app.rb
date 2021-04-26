@@ -35,9 +35,3 @@ get '/' do
   @usernames = [ 'ssaunier', 'Papillard' ]
   erb :index
 end
-
-# IP-Adress: 127.0.0.1/8
-# http://127.0.0.1/8:4567
-# http://172.27.139.141:4567/
-# Using ngroc (sharable), run: ngrok http 4567
-# starts server and returns link that can be shared
